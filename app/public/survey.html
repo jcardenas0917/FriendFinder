@@ -181,54 +181,5 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        // Capture the form inputs
-        $("#submit").on("click", function (event) {
-            event.preventDefault();
-            // Create an object with all the answers and information
-            var answers = {
-                name: $("#name").val(),
-                photo: $("#photo").val(),
-                scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val()
-                ]
-            };
-            console.log(answers.scores)
-            let isValid = true;
-            answers.scores.forEach((value,i) => {
-                console.log(answers.scores)
-                if (answers.scores[i] === "") {
-                    isValid = false;
-                    }
-                });
-                if (answers.name === "" || answers.photo === ""){
-                    isValid = false;
-                }
-                if (isValid){
-                // Post to API
-                // $.post("/api/friends", answers, function (data) {
-
-                //     // Grab result form Ajax
-                //     $("#match-name").text(answers.name);
-                //     $("#match-img").attr("src", answers.photo);
-
-                //     // Show result
-                //     $("#results-modal").modal("toggle");
-                // })
-                alert("Good Job")
-            }else{
-                alert("Please answer all questions");
-            }
-            
-        });
-    </script>
+    <script type="text/javascript" src="./app.js"></script>
 </body>
