@@ -15,3 +15,9 @@ app.use(express.json());
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
+
+// Requires and sets the HTML routes in this file
+require('../app/routing/htmlRoutes')(app);
+
+// Requires and sets the API routes in this file
+require('../app/routing/apiRoutes')(app);
