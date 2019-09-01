@@ -2,9 +2,9 @@
   "name": "FriendFinder",
   "version": "1.0.0",
   "description": "Friend Finder App",
-  "main": "../app/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node ../app/server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
