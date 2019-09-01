@@ -1,14 +1,15 @@
 {
-  "name": "FriendFinder",
+  "name": "friend-finder",
   "version": "1.0.0",
-  "description": "Clone this repo to your PC.",
-  "main": "index.js",
+  "description": "Friend Finder app.",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
