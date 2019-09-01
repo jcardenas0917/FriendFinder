@@ -1,43 +1,40 @@
-let friends = required('../data/friends.js')
+var friends = require('../data/friends.js');
 
 // Export the function
 module.exports = app => {
 
     // Sets the get for the api/friends route
-    app.get('/api/friends', (req, res) => res.json(friends)); 
+    app.get('/api/friends', (req, res) => res.json(friends));
 
     // Set the post for the api/friends route
-    app.get('/api/friends', (req, res) => {
+    app.post('/api/friends', (req, res) => {
         // Set variables only needed for the post
-        let difference = 10;
-        let matchedName = '';
-        let matchedPhoto = '';
-
-        // For-each loop to go through the data in friends.js to find a match
+        let dif = 0;
+        var matchName = '';
+        var matchPhoto = '';
+        let newFriend = req.body
+        // Loops through all the friends arrays
         friends.forEach(friend => {
             // Variables for comparing matches
-            let scoreArray = [];
-            let totalDifference = 10;
+            let matchedArray = [];
+            var totalDif = 0;
+            console.log(friend);
 
-            // Function to assist in the addition reduce() below
-            let add = (total, num) => total + num;
-
-            // This loops through each item of the scores arrays
-            // from both the stored data and the new user, 
-            // and then substracts, absolutes, and then pushes the 
-            // new value to the matchedScoresArray
-            for (var i = 0; i < friend.scores.length; i++) {
-                matchedScoresArray.push(Math.abs(parseInt(req.body.scores[i]) - parseInt(friend.scores[i])));
-
-            }
+            //loops through both user and and friend to and calculates the absolute value
+            friend.scores.forEach(i => {matchedArray.push(Math.abs(parseInt(newFriend.scores[i]) - parseInt(friend.scores[i])))
+                console.log(matchedArray)
+                console.log(newFriend[i])
+            });
+           
 
             // This reduces the matchScoresArray into a single value in a variable
-            totalDifference = matchedScoresArray.reduce(add, 0);
-
+            let add = (total, num) => total + num;
+            totalDif = matchedArray.reduce(add, 0);
+            console.log(totalDif)
             // If the above value is smaller than the previous difference...
-            if (totalDifference < difference) {
+            if (totalDif < dif) {
                 // Set it as the previous difference...
-                difference = totalDifference;
+                dif = totalDif;
                 // And set these variables to the appropriate friend match
                 matchName = friend.name;
                 matchPhoto = friend.photo;
@@ -49,8 +46,8 @@ module.exports = app => {
             name: matchName,
             photo: matchPhoto
         });
-
+        
         // This adds the new users sent data object to friends.js
-        friends.push(req.body);
+        friends.push(newFriend);
     });
 }
