@@ -1,11 +1,14 @@
 {
-  "name": "friend-finder",
+  "name": "FriendFinder",
   "version": "1.0.0",
-  "description": "Friend Finder App",
-  "main": "server.js",
+  "description": "Clone this repo to your PC.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/jcardenas0917/FriendFinder/issues"
   },
-  "homepage": "https://github.com/jcardenas0917/FriendFinder#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/jcardenas0917/FriendFinder#readme"
 }
