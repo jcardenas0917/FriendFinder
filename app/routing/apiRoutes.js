@@ -8,14 +8,13 @@ module.exports = app => {
 
     // Set the post for the api/friends route
     app.post('/api/friends', (req, res) => {
-        // Set variables only needed for the post
+        // Set variables
         let dif = 0;
         let matchName = '';
         let matchPhoto = '';
         let newFriend = req.body;
         // Loops through all the friends arrays
         friends.forEach(friend => {
-            // preset variables to compare the values
             let matchedArray = [];
             let totalDif = 0;
             let result = (total, num) => total + num;
